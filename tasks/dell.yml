@@ -15,6 +15,9 @@
   when: ( "{{ ansible_bios_version }}" != "{{ bios_newest_version }}" )
   notify: Remove temporary bios update file
 
+#- debug: 
+#    msg: "BIOS version is {{ ansible_bios_version }}"
+
 - name: Install BIOS update
   tags: bios
   shell: /tmp/{{ bios_newest_name }} -q
@@ -35,6 +38,9 @@
   script: files/check_ib_fw.sh
   register: IB_version
   when: infiniband_available
+
+#- debug: 
+#    msg: "IB fw version is {{ IB_version.stdout }}"
 
 - name: Copy new FW update to /tmp
   tags: IB
