@@ -7,7 +7,6 @@
   unarchive: 
     src: HP/{{ bios_newest_name }}
     dest: /tmp
-  register: update_needed
   when: ( "{{ ansible_bios_date }}" != "{{ bios_newest_version }}" )
   notify: Remove temporary bios update file
 
