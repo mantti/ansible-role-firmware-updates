@@ -1,0 +1,25 @@
+---
+
+# Finding out what we have installed (assuming Mellanox IB)
+- name: Let's find current IB FW version
+  tags: IB-debug
+  shell: mstflint -d `lspci |grep -i mellanox |cut -d " " -f1` q|awk -F " " -v ORS="" '/FW Version:/{print $3}'
+  register: my_ib_fw_version
+  
+- name: Let's find current IB HW
+  tags: IB-debug
+  shell: mstflint -d `lspci |grep -i mellanox |cut -d " " -f1` q|awk -F " " -v ORS="" '/PSID:/{print $2}'
+  register: my_ib_psid
+
+- name: Debugging what we have
+  tags: IB-debug
+  debug:
+    msg: "Sain version: {{ item }}."
+  with_items: " {{ my_ib_fw_version.stdout_lines }}"
+
+- name: Debugging what we have
+  tags: IB-debug
+  debug:
+    msg: "Sain PSID: {{ item }}."
+  with_items: " {{ my_ib_psid.stdout_lines }}"
+

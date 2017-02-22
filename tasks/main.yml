@@ -11,6 +11,9 @@
 - include: tasks/hp.yml
   when: ( "{{ ansible_system_vendor }}" == "HP" )
 
+- include: tasks/infiniband.yml
+  when: infiniband_available
+
 #- include: tasks/c6320.yml
 #  when: "'c6320' in group_names"
 

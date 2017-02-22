@@ -1,0 +1,9 @@
+---
+
+ib_firmware_newest_version:
+  MT_1100120019: 2.40.5030
+  DEL0A20000018: 2.36.5000
+
+ib_firmware_newest_image:
+  MT_1100120019: fw-ConnectX3-rel-2_40_5030-MCX353A-FCB_A2-A5-FlexBoot-3.4.746.bin
+  DEL0A20000018: fw-ConnectX3-rel-2_36_5000-08PTD1-Flexboot-3.4.718.bin
