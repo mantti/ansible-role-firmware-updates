@@ -1,4 +1,4 @@
 .*.sw?
 files/*.bin
 files/*.BIN
-files/*.scexe
+files/HP/*.scexe
