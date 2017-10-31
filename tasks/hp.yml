@@ -2,6 +2,26 @@
 
 # BIOS updates for HP HW
 
+- name: Check current iLO version
+  tags: ilo
+  script: files/check_idrac_version.sh
+  register: ilo_version
+
+- name: Copy new iLO FW to /tmp
+  tags: ilo
+  copy: src=HP/{{ ilo_newest_name }} mode=0755 dest=/tmp
+  register: ilo_update_needed
+  when: ilo_version.stdout | version_compare ( "{{ ilo_newest_version }}", "<" )
+  notify: Remove temporary ilo update file
+
+- name: Install iLO FW update
+  tags: ilo
+  shell: /tmp/{{ ilo_newest_name }} -s
+  register: ilo_updated
+  when: ilo_update_needed.changed
+  changed_when: ilo_updated.rc == 0 
+
+
 - name: Extract BIOS update package
   tags: bios
   unarchive: 
