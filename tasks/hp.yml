@@ -2,6 +2,10 @@
 
 # BIOS updates for HP HW
 
+- name: ipmitools is installed
+  tags: ilo
+  yum: name=freeipmi state=installed
+
 - name: Check current iLO version
   tags: ilo
   script: files/check_idrac_version.sh
@@ -21,6 +25,10 @@
   when: ilo_update_needed.changed
   changed_when: ilo_updated.rc == 0 
 
+- name: Reset iLO configuration
+  tags: ilo,ilo-reset
+  shell: /home/mmoa/firmware-config/configure-iLO.sh
+#  when: ilo_updated.changed
 
 - name: Extract BIOS update package
   tags: bios
@@ -51,6 +59,10 @@
   script: files/check_ib_fw.sh
   register: IB_version
   when: infiniband_available
+
+- debug: 
+    msg: "IB Firmware-version: {{ IB_version }}"
+  tags: IB,debug
 
 - name: Copy new FW update to /tmp
   tags: IB
