@@ -5,13 +5,13 @@
 #  yum: name=* state=latest
 #  sudo: yes
 
-- include: tasks/dell.yml
+- include_tasks: tasks/dell.yml
   when: ( ansible_system_vendor == "Dell Inc." )
 
-- include: tasks/hp.yml
+- include_tasks: tasks/hp.yml
   when: ( ansible_system_vendor == "HP" )
 
-- include: tasks/infiniband.yml
+- include_tasks: tasks/infiniband.yml
   when: infiniband_available
 
 #- include: tasks/c6320.yml
