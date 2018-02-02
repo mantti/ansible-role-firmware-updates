@@ -6,12 +6,12 @@
 #  sudo: yes
 
 - include_tasks: tasks/dell.yml
-  when: ( ansible_system_vendor == "Dell Inc." )
+  when: ( ansible_system_vendor == "Dell Inc." and ansible_virtualization_role != "guest")
 
-- include_tasks: tasks/hp.yml
-  when: ( ansible_system_vendor == "HP" )
+- import_tasks: tasks/hp.yml
+  when: ( ansible_system_vendor == "HP" and ansible_virtualization_role != "guest")
 
-- include_tasks: tasks/infiniband.yml
+- import_tasks: tasks/infiniband.yml
   when: infiniband_available
 
 #- include: tasks/c6320.yml

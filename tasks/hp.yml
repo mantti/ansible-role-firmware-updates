@@ -7,77 +7,61 @@
   yum: name=freeipmi state=installed
 
 - name: Check current iLO version
-  tags: ilo
+  tags: ilo,debug
   script: files/check_idrac_version.sh
   register: ilo_version
 
+- debug: 
+    msg: 
+      - "iLO Firmware-version: {{ ilo_version.stdout }}"
+      - "iLO newest Firmware-version: {{ ilo_newest_version[ansible_product_name] }}"
+  tags: ilo,debug
+
 - name: Copy new iLO FW to /tmp
   tags: ilo
-  copy: src=HP/{{ ilo_newest_name }} mode=0755 dest=/tmp
+  copy: src=HP/{{ ilo_newest_name[ansible_product_name] }} mode=0755 dest=/tmp
   register: ilo_update_needed
-  when: ilo_version.stdout | version_compare ( "{{ ilo_newest_version }}", "<" )
+  when: ilo_version.stdout | version_compare ( 'ilo_newest_version[ansible_product_name]' , '<' )
   notify: Remove temporary ilo update file
 
 - name: Install iLO FW update
   tags: ilo
-  shell: /tmp/{{ ilo_newest_name }} -s
+  shell: /tmp/{{ ilo_newest_name[ansible_product_name] }} -s
   register: ilo_updated
   when: ilo_update_needed.changed
   changed_when: ilo_updated.rc == 0 
+  notify: Reset iLO configuration
 
-- name: Reset iLO configuration
-  tags: ilo,ilo-reset
-  shell: /home/mmoa/firmware-config/configure-iLO.sh
+#- name: Reset iLO configuration
+#  tags: ilo,ilo-reset
+#  shell: /home/mmoa/firmware-config/configure-iLO.sh
 #  when: ilo_updated.changed
 
 - name: Extract BIOS update package
   tags: bios
   unarchive: 
-    src: HP/{{ bios_newest_name }}
+    src: HP/{{ bios_newest_name[ansible_product_name] }}
     dest: /tmp
-  when: ( "{{ ansible_bios_date }} != {{ bios_newest_version }}" )
+  when: ansible_bios_date != bios_newest_version[ansible_product_name] 
   notify: Remove temporary bios update file
 
 - debug: 
-    msg: "Ansible bios-version {{ ansible_bios_date }}"
+    msg:
+     - "Ansible bios-version {{ ansible_bios_date }}"
+     - "Newest bios-version {{ bios_newest_version[ansible_product_name] }}"
+  tags: bios,debug
 
 - name: Install BIOS update
   tags: bios
   shell: /tmp/usr/lib/i386-linux-gnu/hp-firmware-system-*/hpsetup -s
   register: bios_updated
-  when: ( "{{ ansible_bios_date }}" != "{{ bios_newest_version }}" )
+  when: ( ansible_bios_date != bios_newest_version[ansible_product_name] )
   failed_when: > 
     bios_updated.rc != 0
   changed_when: bios_updated.rc == 0 
 # These are mostly servers, so we just can't request shutdown from slurm
   notify: Request Reboot
 
-# IB firmware update for Mellanox IB cards
+# IB firmware update moved to separate infiniband.yml
 #
-- name: Check current IB fw version
-  tags: IB
-  script: files/check_ib_fw.sh
-  register: IB_version
-  when: infiniband_available
-
-- debug: 
-    msg: "IB Firmware-version: {{ IB_version }}"
-  tags: IB,debug
-
-- name: Copy new FW update to /tmp
-  tags: IB
-  copy: src=HP/{{ ib_firmware_newest_name }} mode=0644 dest=/tmp
-  register: update_needed
-  when: ( "{{ IB_version.stdout }}" != "{{ ib_firmware_newest_version }}" )
-  notify: Remove temporary fw update file
-
-- name: Install FW update
-  tags: IB
-  shell: mstflint -q -s -nofs -y -d `lspci |grep -i mellanox |cut -d " " -f1` -i /tmp/{{ ib_firmware_newest_name }} burn
-  register: fw_updated
-  when: update_needed.changed
-  failed_when: > 
-    fw_updated.rc != 0 and ("The new FW version is the same as the current FW version on flash." not in fw_updated.stdout)
-  changed_when: fw_updated.rc == 0 
-  notify: Request Reboot
 

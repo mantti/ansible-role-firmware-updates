@@ -2,20 +2,39 @@
 
 # Finding out what we have installed (assuming Mellanox IB)
 - name: Let's find current IB FW version
-  tags: IB-debug
-  shell: mstflint -d `lspci |grep -i mellanox |cut -d " " -f1` q|awk -F " " -v ORS="" '/FW Version:/{print $3}'
-  register: my_ib_fw_version
+  tags: IB,debug
+  script: files/check_ib_fw.sh
+#shell: mstflint -d `lspci |grep -i mellanox |cut -d " " -f1` q|awk -F " " -v ORS="" '/FW Version:/{print $3}'
+  register: IB_version
   
+- debug: 
+    msg: 
+     - "IB Firmware-version: {{ IB_version.stdout }}"
+     - "IB newest Firmware-version {{ ib_newest_version[ansible_product_name] }}"
+  tags: IB,debug
+
+- name: Copy new IB FW update to /tmp
+  tags: IB
+  copy: src=HP/{{ ib_newest_name[ansible_product_name] }} mode=0644 dest=/tmp
+  register: update_needed
+  when: ( IB_version.stdout != ib_newest_version[ansible_product_name] )
+  notify: Remove temporary fw update file
+
+- name: Install FW update
+  tags: IB
+  shell: mstflint -q -s -nofs -y -d `lspci |grep -i mellanox |cut -d " " -f1` -i /tmp/{{ ib_newest_name[ansible_product_name] }} burn
+  register: fw_updated
+  when: update_needed.changed
+  failed_when: > 
+    fw_updated.rc != 0 and ("The new FW version is the same as the current FW version on flash." not in fw_updated.stdout)
+  changed_when: fw_updated.rc == 0 
+  notify: Request Reboot
+
+# PSID not used to anything currently
 - name: Let's find current IB HW
   tags: IB-debug
   shell: mstflint -d `lspci |grep -i mellanox |cut -d " " -f1` q|awk -F " " -v ORS="" '/PSID:/{print $2}'
   register: my_ib_psid
-
-- name: Debugging what we have
-  tags: IB-debug
-  debug:
-    msg: "Sain version: {{ item }}."
-  with_items: " {{ my_ib_fw_version.stdout_lines }}"
 
 - name: Debugging what we have
   tags: IB-debug
