@@ -5,7 +5,7 @@
 #  yum: name=* state=latest
 #  sudo: yes
 
-- include_tasks: tasks/dell.yml
+- import_tasks: tasks/dell.yml
   when: ( ansible_system_vendor == "Dell Inc." and ansible_virtualization_role != "guest")
 
 - import_tasks: tasks/hp.yml
