@@ -15,3 +15,7 @@
 #  delegate_to: install
   when: ( "'compute' in group_names" or "'merope-compute' in group_names" )
 
+- name: Reset iLO configuration
+  tags: ilo-reset
+  shell: /home/mmoa/firmware-config/configure-iLO.sh
+
