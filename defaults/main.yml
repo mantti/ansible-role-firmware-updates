@@ -1,5 +1,26 @@
 ---
 
-bios_newest_version: "2.3.4"
-infiniband_available: False
+# Let's define current versions for different HW
+# we'll differentiate hardware by ansible_product_name
+
+ilo_newest_name:
+    "ProLiant SL390s G7": "iLO3-1.89-CP032172.scexe"
+    "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2015.07.01-1.1.i386.tgz"
+ilo_newest_version:
+    "ProLiant SL390s G7": "1.89"
+    "ProLiant SL230s Gen8": "2.55"
+
+bios_newest_name:
+    "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2015.08.16-1.1.i386.tgz"
+    "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2015.07.01-1.1.i386.tgz"
+bios_newest_version:
+    "ProLiant SL390s G7": "08/16/2015"
+    "ProLiant SL230s Gen8": "07/01/2015"
+
+ib_newest_name:
+    "ProLiant SL390s G7": "fw-ConnectX2-2_9_1710-SL390sG7-Flexboot-3.3.500.bin"
+    "ProLiant SL230s Gen8": "fw-ConnectX3-rel-2_40_5030-649282-B21_Cx-Dx-CLP-8025-FlexBoot-3.4.746.bin"
+ib_newest_version:
+    "ProLiant SL390s G7": "2.9.1710"
+    "ProLiant SL230s Gen8": "2.40.5030"
 
