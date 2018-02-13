@@ -2,17 +2,16 @@
   file: name=/tmp/usr state=absent
 
 - name: Remove temporary fw update file
-  file: name=/tmp/{{ ib_firmware_newest_name }} state=absent
+  file: name=/tmp/{{ ib_newest_name }} state=absent
 
 - name: Remove temporary idrac update file
-  file: name=/tmp/{{ ib_firmware_newest_name }} state=absent
+  file: name=/tmp/{{ idrac_newest_name }} state=absent
 
 - name: Remove temporary ilo update file
-  file: name=/tmp/{{ ib_firmware_newest_name }} state=absent
+  file: name=/tmp/{{ ilo_newest_name }} state=absent
 
 - name: Request Reboot
   command: /usr/bin/scontrol update nodename="{{ ansible_hostname }}" state=drain reason=reboot
-#  delegate_to: install
   when: ( "'compute' in group_names" or "'merope-compute' in group_names" )
 
 - name: Reset iLO configuration
