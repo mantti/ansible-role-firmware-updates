@@ -5,7 +5,7 @@
 
 ilo_newest_name:
     "ProLiant SL390s G7": "iLO3-1.89-CP032172.scexe"
-    "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2015.07.01-1.1.i386.tgz"
+    "ProLiant SL230s Gen8": "iLO4-2.55-CP032487.scexe"
 ilo_newest_version:
     "ProLiant SL390s G7": "1.89"
     "ProLiant SL230s Gen8": "2.55"
@@ -13,29 +13,45 @@ ilo_newest_version:
 idrac_newest_name:
     "PowerEdge C6320": "iDRAC-with-Lifecycle-Controller_Firmware_278FC_LN_2.50.50.50_A00.BIN"
     "PowerEdge C4130": "iDRAC-with-Lifecycle-Controller_Firmware_278FC_LN_2.50.50.50_A00.BIN"
+    "PowerEdge R730": "iDRAC-with-Lifecycle-Controller_Firmware_278FC_LN_2.50.50.50_A00.BIN"
+    "PowerEdge M630": "iDRAC-with-Lifecycle-Controller_Firmware_278FC_LN_2.50.50.50_A00.BIN"
+    "PowerEdge R430": "iDRAC-with-Lifecycle-Controller_Firmware_278FC_LN_2.50.50.50_A00.BIN"
 idrac_newest_version:
     "PowerEdge C6320": "2.50.50.50"
     "PowerEdge C4130": "2.50.50.50"
+    "PowerEdge R730": "2.50.50.50"
+    "PowerEdge M630": "2.50.50.50"
+    "PowerEdge R430": "2.50.50.50"
 
 bios_newest_name:
     "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2015.08.16-1.1.i386.tgz"
     "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2015.07.01-1.1.i386.tgz"
     "PowerEdge C6320": "C6320-BIOS_JCX01_LN_2.6.0.BIN"
     "PowerEdge C4130": "C4130_BIOS_WT72N_LN_2.6.0.BIN"
+    "PowerEdge R730": "R730-BIOS_KGTJ5_LN_2.6.0.BIN"
+    "PowerEdge M630": "M630-BIOS_0W1XP_LN_2.6.0.BIN"
+    "PowerEdge R430": "R430_BIOS_1KYYX_LN_2.6.0.BIN"
 bios_newest_version:
     "ProLiant SL390s G7": "08/16/2015"
     "ProLiant SL230s Gen8": "07/01/2015"
     "PowerEdge C6320": "2.6.0"
     "PowerEdge C4130": "2.6.0"
+    "PowerEdge R730": "2.6.0"
+    "PowerEdge M630": "2.6.0"
+    "PowerEdge R430": "2.6.0"
 
 ib_newest_name:
     "ProLiant SL390s G7": "fw-ConnectX2-2_9_1710-SL390sG7-Flexboot-3.3.500.bin"
     "ProLiant SL230s Gen8": "fw-ConnectX3-rel-2_40_5030-649282-B21_Cx-Dx-CLP-8025-FlexBoot-3.4.746.bin"
     "PowerEdge C6320": "fw-ConnectX3-rel-2_42_5000-0XK4C4-FlexBoot-3.4.752.bin"
     "PowerEdge C4130": "fw-ConnectX3-rel-2_42_5000-079DJ3-FlexBoot-3.4.752.bin"
+    "PowerEdge R730": "fw-ConnectX3-rel-2_42_5000-MCX353A-FCB_A2-A5-FlexBoot-3.4.752.bin"
+    "PowerEdge M630": "fw-ConnectX3-rel-2_42_5000-08PTD1-FlexBoot-3.4.752.bin"
 ib_newest_version:
     "ProLiant SL390s G7": "2.9.1710"
     "ProLiant SL230s Gen8": "2.40.5030"
     "PowerEdge C6320": "2.42.5000"
     "PowerEdge C4130": "2.42.5000"
+    "PowerEdge R730": "2.42.5000"
+    "PowerEdge M630": "2.42.5000"
 
