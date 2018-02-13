@@ -15,7 +15,7 @@
 
 - name: Copy new IB FW update to /tmp
   tags: IB
-  copy: src=HP/{{ ib_newest_name[ansible_product_name] }} mode=0644 dest=/tmp
+  copy: src={{ ib_newest_name[ansible_product_name] }} mode=0644 dest=/tmp
   register: update_needed
   when: ( IB_version.stdout != ib_newest_version[ansible_product_name] )
   notify: Remove temporary fw update file
