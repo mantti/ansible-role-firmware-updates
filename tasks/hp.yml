@@ -13,7 +13,7 @@
 
 - debug: 
     msg: 
-      - "iLO Firmware-version: {{ ilo_version.stdout }}"
+      - "iLO Firmware-version: {{ ilo_version.stdout |trim }}"
       - "iLO newest Firmware-version: {{ ilo_newest_version[ansible_product_name] }}"
   tags: ilo,debug
 
@@ -32,10 +32,11 @@
   changed_when: ilo_updated.rc == 0 
   notify: Reset iLO configuration
 
-#- name: Reset iLO configuration
-#  tags: ilo,ilo-reset
-#  shell: /home/mmoa/firmware-config/configure-iLO.sh
-#  when: ilo_updated.changed
+- debug: 
+    msg:
+     - "Ansible bios-version {{ ansible_bios_date }}"
+     - "Newest bios-version {{ bios_newest_version[ansible_product_name] }}"
+  tags: bios,debug
 
 - name: Extract BIOS update package
   tags: bios
@@ -44,12 +45,6 @@
     dest: /tmp
   when: ansible_bios_date != bios_newest_version[ansible_product_name] 
   notify: Remove temporary bios update file
-
-- debug: 
-    msg:
-     - "Ansible bios-version {{ ansible_bios_date }}"
-     - "Newest bios-version {{ bios_newest_version[ansible_product_name] }}"
-  tags: bios,debug
 
 - name: Install BIOS update
   tags: bios
