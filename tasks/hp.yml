@@ -32,6 +32,12 @@
   changed_when: ilo_updated.rc == 0 
   notify: Reset iLO configuration
 
+- name: Request iLO configuration reset
+  tags: ilo-reset
+  debug: msg="Requesting iLO configuration reset"
+  changed_when: True
+  notify: Reset iLO configuration
+
 - debug: 
     msg:
      - "Ansible bios-version {{ ansible_bios_date }}"
