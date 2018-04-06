@@ -36,6 +36,7 @@
   tags: ilo-reset
   debug: msg="Requesting iLO configuration reset"
   changed_when: True
+  when: ilo_updated.rc is defined and ilo_updated.rc == 0
   notify: Reset iLO configuration
 
 - debug: 
