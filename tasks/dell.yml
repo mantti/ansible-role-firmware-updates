@@ -15,7 +15,7 @@
   tags: idrac
   copy: src=Dell/{{ idrac_newest_name[ansible_product_name] }} mode=0755 dest=/tmp
   register: idrac_update_needed
-  when: idrac_version.stdout | version_compare ( 'idrac_newest_version[ansible_product_name]', '<' )
+  when: idrac_version.stdout is version_compare ( 'idrac_newest_version[ansible_product_name]', '<' )
   notify: Remove temporary idrac update file
 
 - name: Install iDRAC FW update
