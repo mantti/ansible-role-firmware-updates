@@ -14,20 +14,20 @@ ilo_newest_version:
 
 idrac_newest_name:
     "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_387FW_LN_3.21.21.21_A00.BIN"
-    "PowerEdge C6320": "iDRAC-with-Lifecycle-Controller_Firmware_74GHJ_LN_2.52.52.52_A00.BIN"
+    "PowerEdge C6320": "iDRAC-with-Lifecycle-Controller_Firmware_CX8N2_LN_2.60.60.60_A00.BIN"
     "PowerEdge C4130": "iDRAC-with-Lifecycle-Controller_Firmware_CX8N2_LN_2.60.60.60_A00.BIN"
-    "PowerEdge R730": "iDRAC-with-Lifecycle-Controller_Firmware_74GHJ_LN_2.52.52.52_A00.BIN"
-    "PowerEdge R730xd": "iDRAC-with-Lifecycle-Controller_Firmware_74GHJ_LN_2.52.52.52_A00.BIN"
-    "PowerEdge M630": "iDRAC-with-Lifecycle-Controller_Firmware_74GHJ_LN_2.52.52.52_A00.BIN"
-    "PowerEdge R430": "iDRAC-with-Lifecycle-Controller_Firmware_74GHJ_LN_2.52.52.52_A00.BIN"
+    "PowerEdge R730": "iDRAC-with-Lifecycle-Controller_Firmware_CX8N2_LN_2.60.60.60_A00.BIN"
+    "PowerEdge R730xd": "iDRAC-with-Lifecycle-Controller_Firmware_CX8N2_LN_2.60.60.60_A00.BIN"
+    "PowerEdge M630": "iDRAC-with-Lifecycle-Controller_Firmware_CX8N2_LN_2.60.60.60_A00.BIN"
+    "PowerEdge R430": "iDRAC-with-Lifecycle-Controller_Firmware_CX8N2_LN_2.60.60.60_A00.BIN"
 idrac_newest_version:
     "PowerEdge C6420": "3.21"
-    "PowerEdge C6320": "2.52"
+    "PowerEdge C6320": "2.60"
     "PowerEdge C4130": "2.60"
-    "PowerEdge R730xd": "2.52"
-    "PowerEdge R730": "2.52"
-    "PowerEdge M630": "2.52"
-    "PowerEdge R430": "2.52"
+    "PowerEdge R730xd": "2.60"
+    "PowerEdge R730": "2.60"
+    "PowerEdge M630": "2.60"
+    "PowerEdge R430": "2.60"
 
 bios_newest_name:
     "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2015.08.16-1.1.i386.tgz"
