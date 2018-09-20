@@ -32,7 +32,7 @@ idrac_newest_version:
 bios_newest_name:
     "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2015.08.16-1.1.i386.tgz"
     "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2015.07.01-1.1.i386.tgz"
-    "PowerEdge C6420": "C6420-BIOS_D9TXT_LN_1.4.5.BIN"
+    "PowerEdge C6420": "C6420_BIOS_V1W6G_LN_1.4.9.BIN"
     "PowerEdge C6320": "C6320-BIOS_VJTT9_LN_2.8.0.BIN"
     "PowerEdge C4130": "C4130_BIOS_65RJV_LN_2.8.0.BIN"
     "PowerEdge R730xd": "R730xd-BIOS_2JFRF_LN_2.8.0.BIN"
@@ -42,7 +42,7 @@ bios_newest_name:
 bios_newest_version:
     "ProLiant SL390s G7": "08/16/2015"
     "ProLiant SL230s Gen8": "07/01/2015"
-    "PowerEdge C6420": "1.4.5"
+    "PowerEdge C6420": "1.4.9"
     "PowerEdge C6320": "2.8.0"
     "PowerEdge C4130": "2.8.0"
     "PowerEdge R730xd": "2.8.0"
