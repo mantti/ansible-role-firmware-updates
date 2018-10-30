@@ -49,3 +49,7 @@
 # These are mostly servers, so we just can't request shutdown from slurm
   notify: Request Reboot
   
+- name: Update idrac name
+  tags: nodename
+  shell: /usr/bin/ipmitool mc setsysinfo system_name {{ inventory_hostname }}
+  
