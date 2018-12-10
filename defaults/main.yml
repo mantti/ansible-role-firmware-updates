@@ -52,6 +52,7 @@ bios_newest_version:
 
 ib_newest_name:
     "ProLiant DL360p Gen8": "fw-ConnectX3-rel-2_42_5000-649283-B21_Cx-Dx-CLP-8025-FlexBoot-3.4.752.bin"
+    "ProLiant DL380p Gen8": "fw-ConnectX3-rel-2_42_5000-649283-B21_Cx-Dx-CLP-8025-FlexBoot-3.4.752.bin"
     "ProLiant SL390s G7": "fw-ConnectX2-2_9_1710-SL390sG7-Flexboot-3.3.500.bin"
     "ProLiant SL230s Gen8": "fw-ConnectX3-rel-2_40_5030-649282-B21_Cx-Dx-CLP-8025-FlexBoot-3.4.746.bin"
     "PowerEdge C6320": "fw-ConnectX3-rel-2_42_5000-0XK4C4-FlexBoot-3.4.752.bin"
