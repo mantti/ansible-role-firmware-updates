@@ -24,6 +24,8 @@
   register: idrac_updated
   when: idrac_update_needed.changed
   changed_when: idrac_updated.rc == 0 
+  failed_when: idrac_updated.rc != 3 and idrac_updated.rc != 0
+# rc=3 if we have already current version
 
 - debug: 
     msg:
