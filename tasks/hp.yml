@@ -29,6 +29,8 @@
   shell: /tmp/{{ ilo_newest_name[ansible_product_name] }} -s
   register: ilo_updated
   when: ilo_update_needed.changed
+  failed_when: > 
+    ilo_updated.rc != 0 and ilo_updated.rc != 2
   changed_when: ilo_updated.rc == 0 
   notify: Reset iLO configuration
 
