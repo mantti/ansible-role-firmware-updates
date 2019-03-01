@@ -61,8 +61,8 @@
   register: bios_updated
   when: ( ansible_bios_date != bios_newest_version[ansible_product_name] )
   failed_when: > 
-    bios_updated.rc != 0 and bios_updated.rc != 2
-  changed_when: bios_updated.rc == 0 
+    bios_updated.rc != 1 and bios_updated.rc != 2
+  changed_when: bios_updated.rc == 1 
 # These are mostly servers, so we just can't request shutdown from slurm
   notify: Request Reboot
 
