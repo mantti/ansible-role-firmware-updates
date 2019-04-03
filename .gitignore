@@ -1,4 +1,6 @@
+.gitignore
 .*.sw?
 files/*.bin
 files/*.BIN
+*.rpm
 files/HP/*.scexe
