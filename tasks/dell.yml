@@ -44,13 +44,20 @@
   tags: bios
   shell: /tmp/{{ bios_newest_name[ansible_product_name] }} -q
   register: bios_updated
-  when: update_needed.changed
+  when: ( ansible_bios_version != bios_newest_version[ansible_product_name] )
+#when: update_needed.changed
   failed_when: > 
     bios_updated.rc != 2 and ("same as the currently installed" not in bios_updated.stdout)
   changed_when: bios_updated.rc == 2 
 # These are mostly servers, so we just can't request shutdown from slurm
   notify: Request Reboot
   
+- name: Check current PERC version
+  tags: perc,debug
+  script: files/Dell/check_perc_fw.sh
+  register: perc_installed_version
+  when: perc_version is defined
+
 - name: Copy new perccli to host which could use it
   tags: perc
   copy: src=Dell/{{ perccli_newest_name }} mode=0755 dest=/tmp
@@ -60,18 +67,13 @@
 - name: Install perccli
   tags: perc
   yum: name=/tmp/{{ perccli_newest_name }} state=installed
-  when: perccli_update_needed
+  when: perccli_update_needed and perc_version is defined
 
-- name: Check current PERC version
-  tags: perc,debug
-  script: files/Dell/check_perc_fw.sh
-  register: perc_installed_version
-
-- debug: 
-    msg: 
-      - "PERC Firmware-version: {{ perc_installed_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
-      - "PERC newest Firmware-version: {{ perc_newest_version [perc_version] }}"
-  tags: perc,debug
+#- debug: 
+#    msg: 
+#      - "PERC Firmware-version: {{ perc_installed_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
+#      - "PERC newest Firmware-version: {{ perc_newest_version [perc_version] }}"
+#  tags: perc,debug
 
 
 - name: Update idrac name
