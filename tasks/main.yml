@@ -12,7 +12,7 @@
   when: ( ansible_system_vendor == "HP" and ansible_virtualization_role != "guest")
 
 - import_tasks: tasks/infiniband.yml
-  when: infiniband_available
+  when: infiniband_available == True
 
 #- include: tasks/c6320.yml
 #  when: "'c6320' in group_names"
