@@ -8,11 +8,14 @@ ilo_newest_name:
     "ProLiant SL230s Gen8": "iLO4-2.70-CP037959.scexe"
     "ProLiant DL360p Gen8": "iLO4-2.70-CP037959.scexe"
     "ProLiant DL360 G7": "iLO3-1.91-CP037906.scexe"
+    "ProLiant SL210t Gen8": "iLO4-2.70-CP037959.scexe"
+
 ilo_newest_version:
     "ProLiant SL390s G7": "1.91"
     "ProLiant SL230s Gen8": "2.70"
     "ProLiant DL360p Gen8": "2.70"
     "ProLiant DL360 G7": "1.91"
+    "ProLiant SL210t Gen8": "2.70"
 
 idrac_newest_name:
     "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_G6W0W_LN_3.30.30.30_A00.BIN"
@@ -40,14 +43,15 @@ bios_newest_name:
     "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2018.05.21.tgz"
     "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2018.05.21.tgz"
     "ProLiant SL210t Gen8": "sl210t-g8-firmware-system-p83-2018.05.21.tgz"
-    "PowerEdge C6420": "C6420_BIOS_1M4NC_LN_2.1.8.BIN"
+    "PowerEdge C6420": "C6420_BIOS_039CJ_LN_2.2.9.BIN"
     "PowerEdge C6320": "C6320_BIOS_7PHW3_LN_2.9.1.BIN"
     "PowerEdge C4130": "C4130_BIOS_3Y22R_LN_2.9.1.BIN"
-    "PowerEdge C4140": "C4140_BIOS_XR09R_LN_1.6.11.BIN"
+    "PowerEdge C4140": "C4140_BIOS_GGF8Y_LN_2.2.9.BIN"
     "PowerEdge R730xd": "R730_BIOS_T9YX9_LN_2.9.1.BIN"
     "PowerEdge R740xd": "R740_BIOS_YJXXX_LN_1.6.13.BIN"
     "PowerEdge R730": "R730_BIOS_T9YX9_LN_2.9.1.BIN"
     "PowerEdge M630": "M630_BIOS_2228J_LN_2.9.1.BIN"
+    "PowerEdge R430": "R430_BIOS_7V25P_LN_2.9.1.BIN"
     "PowerEdge R430": "R430_BIOS_7V25P_LN_2.9.1.BIN"
 
 bios_newest_version:
@@ -56,14 +60,15 @@ bios_newest_version:
     "ProLiant SL390s G7": "05/21/2018"
     "ProLiant SL230s Gen8": "05/21/2018"
     "ProLiant SL210t Gen8": "05/21/2018"
-    "PowerEdge C6420": "2.1.8"
+    "PowerEdge C6420": "2.2.9"
     "PowerEdge C6320": "2.9.1"
     "PowerEdge C4130": "2.9.1"
-    "PowerEdge C4140": "1.6.11"
+    "PowerEdge C4140": "2.2.9"
     "PowerEdge R730xd": "2.9.1"
     "PowerEdge R740xd": "1.6.13"
     "PowerEdge R730": "2.9.1"
     "PowerEdge M630": "2.9.1"
+    "PowerEdge R430": "2.9.1"
     "PowerEdge R430": "2.9.1"
 
 ib_newest_name:
@@ -77,6 +82,7 @@ ib_newest_name:
     "PowerEdge R730": "fw-ConnectX3-rel-2_42_5000-MCX353A-FCB_A2-A5-FlexBoot-3.4.752.bin"
     "PowerEdge M630": "fw-ConnectX3-rel-2_42_5000-08PTD1-FlexBoot-3.4.752.bin"
     "PowerEdge R740xd": "fw-ConnectX5-rel-16_24_1000-0VC496_06FKDT_Ax-FlexBoot-3.5.603.bin"
+    "PowerEdge R430": "fw-ConnectX3-rel-2_42_5000-MCX353A-FCB_A2-A5-FlexBoot-3.4.752.bin"
 
 ib_newest_version:
     "ProLiant DL360p Gen8": "2.42.5000"
@@ -89,6 +95,7 @@ ib_newest_version:
     "PowerEdge R730": "2.42.5000"
     "PowerEdge M630": "2.42.5000"
     "PowerEdge R740xd": "16.24.1000"
+    "PowerEdge R430": "2.42.5000"
 
 perccli_newest_name: "perccli-007.0529.0000.0000-1.noarch.rpm"
 perccli_newest_version: "007.0529.0000.0000"
