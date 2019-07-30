@@ -70,7 +70,6 @@ bios_newest_version:
     "PowerEdge R730": "2.9.1"
     "PowerEdge M630": "2.9.1"
     "PowerEdge R430": "2.9.1"
-    "PowerEdge R430": "2.9.1"
 
 ib_newest_name:
     "ProLiant DL360p Gen8": "fw-ConnectX3-rel-2_42_5000-649283-B21_Cx-Dx-CLP-8025-FlexBoot-3.4.752.bin"
