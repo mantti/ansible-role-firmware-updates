@@ -21,14 +21,14 @@
   tags: ilo
   copy: src=HP/{{ ilo_newest_name[ansible_product_name] }} mode=0755 dest=/tmp
   register: ilo_update_needed
-  when: ilo_version.stdout is version_compare ( 'ilo_newest_version[ansible_product_name]' , '<' )
+  when: ilo_version.stdout is version( ilo_newest_version[ansible_product_name] , '<')
   notify: Remove temporary ilo update file
 
 - name: Install iLO FW update
   tags: ilo
   shell: /tmp/{{ ilo_newest_name[ansible_product_name] }} -s
   register: ilo_updated
-  when: ilo_version.stdout is version_compare ( 'ilo_newest_version[ansible_product_name]' , '<' )
+  when: ilo_version.stdout is version( ilo_newest_version[ansible_product_name] , '<' )
 #when: ilo_update_needed.changed
   failed_when: > 
     ilo_updated.rc != 0 and ilo_updated.rc != 2
