@@ -15,14 +15,14 @@
   tags: idrac
   copy: src=Dell/{{ idrac_newest_name[ansible_product_name] }} mode=0755 dest=/tmp
   register: idrac_update_needed
-  when: idrac_version.stdout is version_compare ( 'idrac_newest_version[ansible_product_name]', '<' )
+  when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
   notify: Remove temporary idrac update file
 
 - name: Install iDRAC FW update
   tags: idrac
   shell: /tmp/{{ idrac_newest_name[ansible_product_name] }} -q
   register: idrac_updated
-  when: idrac_update_needed.changed
+  when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
   changed_when: idrac_updated.rc == 0 
   failed_when: idrac_updated.rc != 3 and idrac_updated.rc != 0
 # rc=3 if we have already current version
@@ -36,41 +36,42 @@
 - name: Copy new BIOS update to /tmp
   tags: bios
   copy: src=Dell/{{ bios_newest_name[ansible_product_name] }} mode=0755 dest=/tmp
-  register: update_needed
-  when: ( ansible_bios_version != bios_newest_version[ansible_product_name] )
+  when: ansible_bios_version is version( bios_newest_version[ansible_product_name] , '<')
   notify: Remove temporary bios update file
 
 - name: Install BIOS update
   tags: bios
   shell: /tmp/{{ bios_newest_name[ansible_product_name] }} -q
   register: bios_updated
-  when: update_needed.changed
+  when: ansible_bios_version is version( bios_newest_version[ansible_product_name] , '<')
   failed_when: > 
     bios_updated.rc != 2 and ("same as the currently installed" not in bios_updated.stdout)
   changed_when: bios_updated.rc == 2 
 # These are mostly servers, so we just can't request shutdown from slurm
   notify: Request Reboot
-  
+ 
 - name: Copy new perccli to host which could use it
-  tags: perc
+  tags: perc, perccli
   copy: src=Dell/{{ perccli_newest_name }} mode=0755 dest=/tmp
   register: perccli_update_needed
-  when: perc_version is defined
+  when: "'nfs' in group_names"
 
 - name: Install perccli
-  tags: perc
+  tags: perc, perccli
   yum: name=/tmp/{{ perccli_newest_name }} state=installed
-  when: perccli_update_needed
+  when: perccli_update_needed 
 
 - name: Check current PERC version
   tags: perc,debug
   script: files/Dell/check_perc_fw.sh
   register: perc_installed_version
+  when: perc_version is defined
 
 - debug: 
     msg: 
       - "PERC Firmware-version: {{ perc_installed_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
       - "PERC newest Firmware-version: {{ perc_newest_version [perc_version] }}"
+  when: perc_version is defined
   tags: perc,debug
 
 
