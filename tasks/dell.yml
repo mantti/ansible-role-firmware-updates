@@ -49,29 +49,45 @@
   changed_when: bios_updated.rc == 2 
 # These are mostly servers, so we just can't request shutdown from slurm
   notify: Request Reboot
-  
+ 
+- name: Copy new perccli to host which could use it
+  tags: perc, perccli
+  copy: src=Dell/{{ perccli_newest_name }} mode=0755 dest=/tmp
+  register: perccli_update_needed
+  when: "'nfs' in group_names"
+
+- name: Install perccli
+  tags: perc, perccli
+  yum: name=/tmp/{{ perccli_newest_name }} state=installed
+  when: perccli_update_needed|bool
+
 - name: Check current PERC version
   tags: perc,debug
   script: files/Dell/check_perc_fw.sh
   register: perc_installed_version
   when: perc_version is defined
 
-- name: Copy new perccli to host which could use it
-  tags: perc
-  copy: src=Dell/{{ perccli_newest_name }} mode=0755 dest=/tmp
-  register: perccli_update_needed
+- debug:
+    msg:
+      - "PERC Firmware-version: {{ perc_installed_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
+      - "PERC newest Firmware-version: {{ perc_newest_version [perc_version] }}"
   when: perc_version is defined
+  tags: perc,debug
 
-- name: Install perccli
-  tags: perc
-  yum: name=/tmp/{{ perccli_newest_name }} state=installed
-  when: perccli_update_needed and perc_version is defined
+- name: Copy new PERC FW to /tmp
+  tags: fw, perc
+  copy: src=Dell/{{ perc_newest_name[perc_version] }} mode=0755 dest=/tmp
+  register: perc_update_needed
+  #  when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
+  notify: Remove temporary perc update file
 
-#- debug: 
-#    msg: 
-#      - "PERC Firmware-version: {{ perc_installed_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
-#      - "PERC newest Firmware-version: {{ perc_newest_version [perc_version] }}"
-#  tags: perc,debug
+- name: Install PERC FW update
+  tags: fw, perc
+  shell: /tmp/{{ perc_newest_name[perc_version] }} -q
+  register: perc_updated
+  #when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
+  changed_when: perc_updated.rc == 2 
+  failed_when: perc_updated.rc != 3 and perc_updated.rc != 2
 
 
 - name: Update idrac name
