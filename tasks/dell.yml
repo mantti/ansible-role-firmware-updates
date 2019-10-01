@@ -59,7 +59,7 @@
 - name: Install perccli
   tags: perc, perccli
   yum: name=/tmp/{{ perccli_newest_name }} state=installed
-  when: perccli_update_needed 
+  when: perccli_update_needed|bool
 
 - name: Check current PERC version
   tags: perc,debug
@@ -67,12 +67,27 @@
   register: perc_installed_version
   when: perc_version is defined
 
-- debug: 
-    msg: 
+- debug:
+    msg:
       - "PERC Firmware-version: {{ perc_installed_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
       - "PERC newest Firmware-version: {{ perc_newest_version [perc_version] }}"
   when: perc_version is defined
   tags: perc,debug
+
+- name: Copy new PERC FW to /tmp
+  tags: fw, perc
+  copy: src=Dell/{{ perc_newest_name[perc_version] }} mode=0755 dest=/tmp
+  register: perc_update_needed
+  #  when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
+  notify: Remove temporary perc update file
+
+- name: Install PERC FW update
+  tags: fw, perc
+  shell: /tmp/{{ perc_newest_name[perc_version] }} -q
+  register: perc_updated
+  #when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
+  changed_when: perc_updated.rc == 2 
+  failed_when: perc_updated.rc != 3 and perc_updated.rc != 2
 
 
 - name: Update idrac name

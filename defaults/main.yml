@@ -92,7 +92,11 @@ perccli_newest_name: "perccli-007.0529.0000.0000-1.noarch.rpm"
 perccli_newest_version: "007.0529.0000.0000"
 
 perc_newest_version:
-    "H730P": "25.5.5.0005"
+    "H730P": "25.5.6.0009"
+    "H830": "25.5.6.0009"
+    "H740P": "50.5.1.2818"
 
 perc_newest_name:
-    "H730P": "H730P_SAS-RAID_Firmware_F675Y_LN_25.5.5.0005_A13.BIN"
+    "H730P": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
+    "H830": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
+    "H740P": "H740P_SAS-RAID_Firmware_3D46P_LN_50.5.1-2818_A07.1.BIN"
