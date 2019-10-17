@@ -18,24 +18,24 @@ ilo_newest_version:
     "ProLiant SL210t Gen8": "2.70"
 
 idrac_newest_name:
-    "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_3HT97_LN_3.34.34.34_A00.BIN"
+    "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_HFMCV_LN_3.36.36.36_A00.BIN"
     "PowerEdge C6320": "iDRAC-with-Lifecycle-Controller_Firmware_40T1C_LN_2.63.60.61_A00.BIN"
     "PowerEdge C4130": "iDRAC-with-Lifecycle-Controller_Firmware_40T1C_LN_2.63.60.61_A00.BIN"
-    "PowerEdge C4140": "iDRAC-with-Lifecycle-Controller_Firmware_3HT97_LN_3.34.34.34_A00.BIN"
+    "PowerEdge C4140": "iDRAC-with-Lifecycle-Controller_Firmware_HFMCV_LN_3.36.36.36_A00.BIN"
     "PowerEdge R730": "iDRAC-with-Lifecycle-Controller_Firmware_40T1C_LN_2.63.60.61_A00.BIN"
     "PowerEdge R730xd": "iDRAC-with-Lifecycle-Controller_Firmware_40T1C_LN_2.63.60.61_A00.BIN"
-    "PowerEdge R740xd": "iDRAC-with-Lifecycle-Controller_Firmware_3HT97_LN_3.34.34.34_A00.BIN"
+    "PowerEdge R740xd": "iDRAC-with-Lifecycle-Controller_Firmware_HFMCV_LN_3.36.36.36_A00.BIN"
     "PowerEdge M630": "iDRAC-with-Lifecycle-Controller_Firmware_40T1C_LN_2.63.60.61_A00.BIN"
     "PowerEdge R430": "iDRAC-with-Lifecycle-Controller_Firmware_40T1C_LN_2.63.60.61_A00.BIN"
 
 idrac_newest_version:
-    "PowerEdge C6420": "3.34"
+    "PowerEdge C6420": "3.36"
     "PowerEdge C6320": "2.63"
     "PowerEdge C4130": "2.63"
-    "PowerEdge C4140": "3.34"
+    "PowerEdge C4140": "3.36"
     "PowerEdge R730xd": "2.63"
     "PowerEdge R730": "2.63"
-    "PowerEdge R740xd": "3.34"
+    "PowerEdge R740xd": "3.36"
     "PowerEdge M630": "2.63"
     "PowerEdge R430": "2.63"
 
