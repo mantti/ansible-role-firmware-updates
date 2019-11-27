@@ -1,5 +1,9 @@
 ---
 
+- name: Install bmcinfo for checking idrac version
+  tags: idrac,debug
+  yum: name=freeipmi state=installed
+
 - name: Check current iDRAC version
   tags: idrac,debug
   script: files/check_idrac_version.sh
