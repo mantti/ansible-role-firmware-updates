@@ -1,5 +1,9 @@
 ---
 
+- name: Install mstflint for checking mstflint version
+  tags: IB,debug
+  yum: name=mstflint state=installed
+
 # Finding out what we have installed (assuming Mellanox IB)
 - name: Let's find current IB FW version
   tags: IB,debug
