@@ -13,6 +13,9 @@
 - name: Remove temporary perc update file
   file: name=/tmp/{{ perc_newest_name[perc_version] }} state=absent
 
+- name: Remove perccli rpm
+  file: name=/tmp/{{ perccli_newest_name }} state=absent
+
 - name: Request Reboot
   command: /usr/bin/scontrol update nodename="{{ ansible_hostname }}" state=drain reason=reboot
   when: ( "'compute' in group_names" or "'merope-compute' in group_names" )
