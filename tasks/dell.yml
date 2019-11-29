@@ -55,7 +55,7 @@
   notify: Request Reboot
  
 - name: Let's gather installed package-versions
-  tags: perccli, perc
+  tags: perccli, perc, fw
   package_facts:
     manager: auto
 
@@ -64,22 +64,22 @@
   debug: var=ansible_facts.packages.perccli[0].version,perc_version,perccli_newest_version
 
 - name: Copy new perccli to host which could use it
-  tags: perc, perccli
+  tags: perc, perccli, fw
   copy: src=Dell/{{ perccli_newest_name }} mode=0755 dest=/tmp
   register: perccli_update_needed
   when:
     - perc_version is defined
-    - perccli_newest_version is version(ansible_facts.packages.perccli[0].version, '>')
+    - ansible_facts.packages.perccli is undefined or perccli_newest_version is version(ansible_facts.packages.perccli[0].version, '>')
   notify: Remove perccli rpm
 
 - name: Install perccli
-  tags: perc, perccli
+  tags: perc, perccli, fw
   yum: name=/tmp/{{ perccli_newest_name }} state=installed
   when: perccli_update_needed.changed or perccli_newest_version is version(ansible_facts.packages.perccli[0].version, '>')
   notify: Remove perccli rpm
 
 - name: Check current PERC version
-  tags: perc,debug
+  tags: perc,debug, fw
   script: files/Dell/check_perc_fw.sh
   register: perc_installed_version
   when: perc_version is defined
