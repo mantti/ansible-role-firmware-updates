@@ -5,17 +5,17 @@
 
 ilo_newest_name:
     "ProLiant SL390s G7": "iLO3-1.91-CP037906.scexe"
-    "ProLiant SL230s Gen8": "iLO4-270b-CP040550.scexe"
-    "ProLiant DL360p Gen8": "iLO4-270b-CP040550.scexe"
+    "ProLiant SL230s Gen8": "iLO4-2.72-CP041058.scexe"
+    "ProLiant DL360p Gen8": "iLO4-2.72-CP041058.scexe"
     "ProLiant DL360 G7": "iLO3-1.91-CP037906.scexe"
-    "ProLiant SL210t Gen8": "iLO4-270b-CP040550.scexe"
+    "ProLiant SL210t Gen8": "iLO4-2.72-CP041058.scexe"
 
 ilo_newest_version:
     "ProLiant SL390s G7": "1.91"
-    "ProLiant SL230s Gen8": "2.70"
-    "ProLiant DL360p Gen8": "2.70"
+    "ProLiant SL230s Gen8": "2.72"
+    "ProLiant DL360p Gen8": "2.72"
     "ProLiant DL360 G7": "1.91"
-    "ProLiant SL210t Gen8": "2.70"
+    "ProLiant SL210t Gen8": "2.72"
 
 idrac_newest_name:
     "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_HFMCV_LN_3.36.36.36_A00.BIN"
