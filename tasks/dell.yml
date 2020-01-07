@@ -75,7 +75,9 @@
 - name: Install perccli
   tags: perc, perccli, fw
   yum: name=/tmp/{{ perccli_newest_name }} state=installed
-  when: perccli_update_needed.changed or perccli_newest_version is version(ansible_facts.packages.perccli[0].version, '>')
+  when: 
+    - perc_version is defined
+    - perccli_update_needed.changed or perccli_newest_version is version(ansible_facts.packages.perccli[0].version, '>')
   notify: Remove perccli rpm
 
 - name: Check current PERC version
@@ -95,14 +97,18 @@
   tags: fw, perc
   copy: src=Dell/{{ perc_newest_name[perc_version] }} mode=0755 dest=/tmp
   register: perc_update_needed
-  #  when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
+  when: 
+    - perc_version is defined
+    - perc_installed_version.stdout is version ( perc_newest_version, '<' )
   notify: Remove temporary perc update file
 
 - name: Install PERC FW update
   tags: fw, perc
   shell: /tmp/{{ perc_newest_name[perc_version] }} -q
   register: perc_updated
-  #when: idrac_version.stdout is version ( idrac_newest_version[ansible_product_name], '<' )
+  when:
+    - perc_version is defined
+    - perc_installed_version.stdout is version ( perc_newest_version, '<' )
   changed_when: perc_updated.rc == 2 
   failed_when: perc_updated.rc != 3 and perc_updated.rc != 2
 
