@@ -9,11 +9,12 @@
   script: files/check_idrac_version.sh
   register: idrac_version
 
-- debug: 
+- name: Idrac versions
+  tags: idrac,debug
+  debug: 
     msg: 
       - "iDRAC Firmware-version: {{ idrac_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
       - "iDRAC newest Firmware-version: {{ idrac_newest_version[ansible_product_name] }}"
-  tags: idrac,debug
 
 - name: Copy new idrac FW to /tmp
   tags: idrac
