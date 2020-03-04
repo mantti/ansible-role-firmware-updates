@@ -5,22 +5,22 @@
 
 ilo_newest_name:
     "ProLiant SL390s G7": "iLO3-1.91-CP037906.scexe"
-    "ProLiant SL230s Gen8": "iLO4-2.72-CP041058.scexe"
-    "ProLiant DL360p Gen8": "iLO4-2.72-CP041058.scexe"
+    "ProLiant SL230s Gen8": "iLO4-2.73-CP042663.scexe"
+    "ProLiant DL360p Gen8": "iLO4-2.73-CP042663.scexe"
     "ProLiant DL360 G7": "iLO3-1.91-CP037906.scexe"
-    "ProLiant SL210t Gen8": "iLO4-2.72-CP041058.scexe"
+    "ProLiant SL210t Gen8": "iLO4-2.73-CP042663.scexe"
 
 ilo_newest_version:
     "ProLiant SL390s G7": "1.91"
-    "ProLiant SL230s Gen8": "2.72"
-    "ProLiant DL360p Gen8": "2.72"
+    "ProLiant SL230s Gen8": "2.73"
+    "ProLiant DL360p Gen8": "2.73"
     "ProLiant DL360 G7": "1.91"
-    "ProLiant SL210t Gen8": "2.72"
+    "ProLiant SL210t Gen8": "2.73"
 
 idrac_newest_name:
     "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_4JCPK_LN_4.00.00.00_A00.BIN"
     "PowerEdge C4140": "iDRAC-with-Lifecycle-Controller_Firmware_4JCPK_LN_4.00.00.00_A00.BIN"
-    "PowerEdge R740xd": "iDRAC-with-Lifecycle-Controller_Firmware_HFMCV_LN_3.36.36.36_A00.BIN"
+    "PowerEdge R740xd": "iDRAC-with-Lifecycle-Controller_Firmware_4JCPK_LN_4.00.00.00_A00.BIN"
     "PowerEdge C6320": "iDRAC-with-Lifecycle-Controller_Firmware_DNH17_LN_2.70.70.70_A00.BIN"
     "PowerEdge C4130": "iDRAC-with-Lifecycle-Controller_Firmware_DNH17_LN_2.70.70.70_A00.BIN"
     "PowerEdge R730": "iDRAC-with-Lifecycle-Controller_Firmware_DNH17_LN_2.70.70.70_A00.BIN"
@@ -31,7 +31,7 @@ idrac_newest_name:
 idrac_newest_version:
     "PowerEdge C6420": "4.00"
     "PowerEdge C4140": "4.00"
-    "PowerEdge R740xd": "3.36"
+    "PowerEdge R740xd": "4.00"
     "PowerEdge C6320": "2.70"
     "PowerEdge C4130": "2.70"
     "PowerEdge R730xd": "2.70"
