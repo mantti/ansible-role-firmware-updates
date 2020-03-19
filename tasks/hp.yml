@@ -10,6 +10,7 @@
   tags: ilo,debug
   script: files/check_idrac_version.sh
   register: ilo_version
+  changed_when: False
 
 - debug: 
     msg: 

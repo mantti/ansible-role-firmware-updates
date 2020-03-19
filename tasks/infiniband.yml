@@ -10,6 +10,7 @@
   script: files/check_ib_fw.sh
 #shell: mstflint -d `lspci |grep -i mellanox |cut -d " " -f1` q|awk -F " " -v ORS="" '/FW Version:/{print $3}'
   register: IB_version
+  changed_when: False
   
 - debug: 
     msg: 
@@ -39,6 +40,7 @@
   tags: IB-debug
   shell: mstflint -d `lspci |grep -i mellanox |cut -d " " -f1` q|awk -F " " -v ORS="" '/PSID:/{print $2}'
   register: my_ib_psid
+  changed_when: False
 
 - name: Debugging what we have
   tags: IB-debug

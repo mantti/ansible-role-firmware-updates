@@ -8,6 +8,7 @@
   tags: idrac,debug
   script: files/check_idrac_version.sh
   register: idrac_version
+  changed_when: False
 
 - name: Idrac versions
   tags: idrac,debug
@@ -86,6 +87,7 @@
   script: files/Dell/check_perc_fw.sh
   register: perc_installed_version
   when: perc_version is defined
+  changed_when: False
 
 - debug:
     msg:
@@ -112,7 +114,6 @@
     - perc_installed_version.stdout is version ( perc_newest_version, '<' )
   changed_when: perc_updated.rc == 2 
   failed_when: perc_updated.rc != 3 and perc_updated.rc != 2
-
 
 - name: Update idrac name
   tags: nodename
