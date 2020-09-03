@@ -104,10 +104,10 @@ perc_newest_version:
     "H730P": "25.5.6.0009"
     "H730": "25.5.6.0009"
     "H830": "25.5.6.0009"
-    "H740P": "50.9.3.2949"
+    "H740P": "50.9.4-3025"
 
 perc_newest_name:
     "H730P": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
     "H730": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
     "H830": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
-    "H740P": "H740P_SAS-RAID_Firmware_JVJNC_LN_50.9.3-2949_A10.BIN"
+    "H740P": "H740P_SAS-RAID_Firmware_WVCR0_LN_50.9.4-3025_A11_01.BIN"
