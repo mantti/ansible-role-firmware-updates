@@ -18,6 +18,7 @@ ilo_newest_version:
     "ProLiant SL210t Gen8": "2.75"
 
 idrac_newest_name:
+    "PowerEdge C6525": "iDRAC-with-Lifecycle-Controller_Firmware_RJ6G8_LN_4.30.30.30_A00.BIN"
     "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_9F2TG_LN_4.22.00.00_A00.BIN"
     "PowerEdge C4140": "iDRAC-with-Lifecycle-Controller_Firmware_9F2TG_LN_4.22.00.00_A00.BIN"
     "PowerEdge R740xd": "iDRAC-with-Lifecycle-Controller_Firmware_9F2TG_LN_4.22.00.00_A00.BIN"
@@ -29,6 +30,7 @@ idrac_newest_name:
     "PowerEdge M630": "iDRAC-with-Lifecycle-Controller_Firmware_KRCXX_LN_2.75.75.75_A00.BIN"
 
 idrac_newest_version:
+    "PowerEdge C6525": "4.30"
     "PowerEdge C6420": "4.22"
     "PowerEdge C4140": "4.22"
     "PowerEdge R740xd": "4.22"
@@ -44,9 +46,10 @@ bios_newest_name:
     "ProLiant DL360p Gen8": "DL360pg8_firmware-system-p71-2019.05.24.tgz"
     "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2018.05.21.tgz"
     "ProLiant SL230s Gen8": "firmware-system-p75-2019.05.24-1.1.i386.rpm.tgz"
-    "PowerEdge C6420": "C6420_BIOS_5K73K_LN_2.8.1.BIN"
+    "PowerEdge C6525": "C6525_BIOS_7964N_LN_1.5.4.BIN"
+    "PowerEdge C6420": "C6420_BIOS_MTTTX_LN_2.8.2_01.BIN"
     "PowerEdge C4140": "C4140_BIOS_70JDW_LN_2.8.1.BIN"
-    "PowerEdge R740xd": "R740_BIOS_RTWM9_LN_2.8.1.BIN"
+    "PowerEdge R740xd": "R740_BIOS_HC85T_LN_2.8.2_02.BIN"
     "PowerEdge C6320": "C6320_BIOS_4MJ8H_LN_2.11.0.BIN"
     "PowerEdge C4130": "C4130_BIOS_WHGGC_LN_2.11.0.BIN"
     "PowerEdge R730xd": "R730_BIOS_7YNRC_LN_2.11.0.BIN"
@@ -59,9 +62,10 @@ bios_newest_version:
     "ProLiant DL360p Gen8": "05/24/2019"
     "ProLiant SL390s G7": "05/21/2018"
     "ProLiant SL230s Gen8": "05/24/2019"
-    "PowerEdge C6420": "2.8.1"
+    "PowerEdge C6525": "1.5.4"
+    "PowerEdge C6420": "2.8.2"
     "PowerEdge C4140": "2.8.1"
-    "PowerEdge R740xd": "2.8.1"
+    "PowerEdge R740xd": "2.8.2"
     "PowerEdge C6320": "2.11.0"
     "PowerEdge C4130": "2.11.0"
     "PowerEdge R730xd": "2.11.0"
@@ -97,17 +101,19 @@ ib_newest_version:
     "PowerEdge R740xd": "16.24.1000"
     "PowerEdge R430": "2.42.5000"
 
-perccli_newest_name: "perccli-007.0529.0000.0000-1.noarch.rpm"
-perccli_newest_version: "007.0529.0000.0000"
+perccli_newest_name: "perccli-007.1327.0000.0000-1.noarch.rpm"
+perccli_newest_version: "007.1327.0000.0000"
 
 perc_newest_version:
     "H730P": "25.5.6.0009"
     "H730": "25.5.6.0009"
     "H830": "25.5.6.0009"
     "H740P": "50.9.4-3025"
+    "H840": "51.13.2-3714"
 
 perc_newest_name:
     "H730P": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
     "H730": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
     "H830": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
     "H740P": "H740P_SAS-RAID_Firmware_WVCR0_LN_50.9.4-3025_A11_01.BIN"
+    "H840": "H840_SAS-RAID_Firmware_26PXK_LN_51.13.2-3714_A14.BIN"
