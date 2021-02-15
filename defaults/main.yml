@@ -106,15 +106,16 @@ perccli_newest_name: "perccli-007.1327.0000.0000-1.noarch.rpm"
 perccli_newest_version: "007.1327.0000.0000"
 
 perc_newest_version:
-    "H730P": "25.5.6.0009"
-    "H730": "25.5.6.0009"
-    "H830": "25.5.6.0009"
+    "H730P": "25.5.7.0005"
+    "H730": "25.5.7.0005"
+    "H830": "25.5.7.0005"
     "H740P": "50.9.4-3025"
     "H840": "51.13.2-3714"
 
 perc_newest_name:
-    "H730P": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
-    "H730": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
-    "H830": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
+#   "H730P": "H730P_PERC-SAS-RAID_Firmware_G7N2C_LN_25.5.6.0009_A14.BIN"
+    "H730P": "H730_SAS-RAID_Firmware_N3T11_LN_25.5.7.0005_A15.BIN"
+    "H730": "H730_SAS-RAID_Firmware_N3T11_LN_25.5.7.0005_A15.BIN"
+    "H830": "H730_SAS-RAID_Firmware_N3T11_LN_25.5.7.0005_A15.BIN"
     "H740P": "H740P_SAS-RAID_Firmware_WVCR0_LN_50.9.4-3025_A11_01.BIN"
     "H840": "H840_SAS-RAID_Firmware_26PXK_LN_51.13.2-3714_A14.BIN"
