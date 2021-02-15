@@ -5,17 +5,17 @@
 
 ilo_newest_name:
     "ProLiant SL390s G7": "iLO3-1.93-CP044657.scexe"
-    "ProLiant SL230s Gen8": "iLO4-2.75-CP044405.scexe"
-    "ProLiant DL360p Gen8": "iLO4-2.75-CP044405.scexe"
+    "ProLiant SL230s Gen8": "iLO4-2.77-CP046020.scexe"
+    "ProLiant DL360p Gen8": "iLO4-2.77-CP046020.scexe"
     "ProLiant DL360 G7": "iLO3-1.93-CP044657.scexe"
-    "ProLiant SL210t Gen8": "iLO4-2.75-CP044405.scexe"
+    "ProLiant SL210t Gen8": "iLO4-2.77-CP046020.scexe"
 
 ilo_newest_version:
     "ProLiant SL390s G7": "1.93"
-    "ProLiant SL230s Gen8": "2.75"
-    "ProLiant DL360p Gen8": "2.75"
+    "ProLiant SL230s Gen8": "2.77"
+    "ProLiant DL360p Gen8": "2.77"
     "ProLiant DL360 G7": "1.93"
-    "ProLiant SL210t Gen8": "2.75"
+    "ProLiant SL210t Gen8": "2.77"
 
 idrac_newest_name:
     "PowerEdge C6525": "iDRAC-with-Lifecycle-Controller_Firmware_RJ6G8_LN_4.30.30.30_A00.BIN"
@@ -26,7 +26,7 @@ idrac_newest_name:
     "PowerEdge C4130": "iDRAC-with-Lifecycle-Controller_Firmware_KRCXX_LN_2.75.75.75_A00.BIN"
     "PowerEdge R730": "iDRAC-with-Lifecycle-Controller_Firmware_KRCXX_LN_2.75.75.75_A00.BIN"
     "PowerEdge R730xd": "iDRAC-with-Lifecycle-Controller_Firmware_KRCXX_LN_2.75.75.75_A00.BIN"
-    "PowerEdge R430": "iDRAC-with-Lifecycle-Controller_Firmware_KRCXX_LN_2.75.75.75_A00.BIN"
+    "PowerEdge R430": "iDRAC-with-Lifecycle-Controller_Firmware_DPV0R_LN_2.75.100.75_A00.BIN"
     "PowerEdge M630": "iDRAC-with-Lifecycle-Controller_Firmware_KRCXX_LN_2.75.75.75_A00.BIN"
 
 idrac_newest_version:
@@ -45,17 +45,18 @@ bios_newest_name:
     "ProLiant DL360 G7": "DL360_g7-firmware-system-p68-2018.05.21-1.1.i386.tgz"
     "ProLiant DL360p Gen8": "DL360pg8_firmware-system-p71-2019.05.24.tgz"
     "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2018.05.21.tgz"
-    "ProLiant SL230s Gen8": "firmware-system-p75-2019.05.24-1.1.i386.rpm.tgz"
+    #"ProLiant SL230s Gen8": "firmware-system-p75-2019.05.24-1.1.i386.rpm.tgz"
+    "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2019.05.24.tgz"
     "PowerEdge C6525": "C6525_BIOS_7964N_LN_1.5.4.BIN"
     "PowerEdge C6420": "C6420_BIOS_MTTTX_LN_2.8.2_01.BIN"
-    "PowerEdge C4140": "C4140_BIOS_70JDW_LN_2.8.1.BIN"
-    "PowerEdge R740xd": "R740_BIOS_HC85T_LN_2.8.2_02.BIN"
+    "PowerEdge C4140": "C4140_BIOS_F94GK_LN_2.9.3_03.BIN"
+    "PowerEdge R740xd": "R740_BIOS_NVGR9_LN_2.10.0.BIN"
     "PowerEdge C6320": "C6320_BIOS_4MJ8H_LN_2.11.0.BIN"
     "PowerEdge C4130": "C4130_BIOS_WHGGC_LN_2.11.0.BIN"
     "PowerEdge R730xd": "R730_BIOS_7YNRC_LN_2.11.0.BIN"
-    "PowerEdge R730": "R730_BIOS_7YNRC_LN_2.11.0.BIN"
+    "PowerEdge R730": "R730_BIOS_9FG85_LN_2.12.1_01.BIN"
     "PowerEdge M630": "M630_BIOS_5WJG6_LN_2.11.0.BIN"
-    "PowerEdge R430": "R430_BIOS_T02X9_LN_2.11.0.BIN"
+    "PowerEdge R430": "R430_BIOS_1VR7T_LN_2.12.1.BIN"
 
 bios_newest_version:
     "ProLiant DL360 G7": "05/21/2018"
