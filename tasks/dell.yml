@@ -76,7 +76,7 @@
 
 - name: Install perccli
   tags: perc, perccli, fw
-  yum: name=/tmp/{{ perccli_newest_name }} state=installed
+  yum: name=/tmp/{{ perccli_newest_name }} state=installed disable_gpg_check=true
   when: 
     - perc_version is defined
     - perccli_update_needed.changed or perccli_newest_version is version(ansible_facts.packages.perccli[0].version, '>')
