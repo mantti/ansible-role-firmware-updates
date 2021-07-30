@@ -27,9 +27,9 @@
 
 - name: Install FW update
   tags: IB
-  shell: mstflint -q -s -nofs -y -d `lspci |grep -i mellanox |cut -d " " -f1` -i /tmp/{{ ib_newest_name[ansible_product_name] }} burn
+  shell: mstflint -q -s -y -d `lspci |grep -i mellanox |cut -d " " -f1` -i /tmp/{{ ib_newest_name[ansible_product_name] }} burn
   register: fw_updated
-  when: update_needed.changed
+  when: ( IB_version.stdout != ib_newest_version[ansible_product_name] )
   failed_when: > 
     fw_updated.rc != 0 and ("The new FW version is the same as the current FW version on flash." not in fw_updated.stdout)
   changed_when: fw_updated.rc == 0 
