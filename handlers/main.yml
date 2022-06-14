@@ -18,7 +18,7 @@
 
 - name: Request Reboot
   command: /usr/bin/scontrol update nodename="{{ ansible_hostname }}" state=drain reason=reboot
-  when: ( "'compute' in group_names" or "'merope-compute' in group_names" )
+  when: (inventory_hostname in groups.compute)
 
 - name: Reset iLO configuration
   tags: ilo-reset
