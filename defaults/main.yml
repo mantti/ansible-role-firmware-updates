@@ -19,7 +19,7 @@ ilo_newest_version:
 
 idrac_newest_name:
     "PowerEdge C6525": "iDRAC-with-Lifecycle-Controller_Firmware_FPTF1_LN64_5.10.10.00_A00.BIN"
-    "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_FPTF1_LN64_5.10.10.00_A00.BIN"
+    "PowerEdge C6420": "iDRAC-with-Lifecycle-Controller_Firmware_RTTPH_LN64_5.10.50.00_A00.BIN"
     "PowerEdge C4140": "iDRAC-with-Lifecycle-Controller_Firmware_62GW1_LN_4.40.00.00_A00.BIN"
     "PowerEdge R740xd": "iDRAC-with-Lifecycle-Controller_Firmware_62GW1_LN_4.40.00.00_A00.BIN"
     "PowerEdge R740": "iDRAC-with-Lifecycle-Controller_Firmware_62GW1_LN_4.40.00.00_A00.BIN"
@@ -49,7 +49,7 @@ bios_newest_name:
     "ProLiant SL390s G7": "sl390sg7-firmware-system-p69-2018.05.21.tgz"
     "ProLiant SL230s Gen8": "sl230s-firmware-system-p75-2019.05.24.tgz"
     "PowerEdge C6525": "C6525_BIOS_NMHXN_LN64_2.6.7.BIN"
-    "PowerEdge C6420": "C6420_BIOS_KHHWP_LN64_2.13.3.BIN"
+    "PowerEdge C6420": "C6420_BIOS_60W11_LN64_2.15.1.BIN"
     "PowerEdge C4140": "C4140_BIOS_T4K3H_LN64_2.13.3.BIN"
     "PowerEdge R740xd": "R740_BIOS_8JY6W_LN64_2.14.2.BIN"
     "PowerEdge R740": "R740_BIOS_8JY6W_LN64_2.14.2.BIN"
@@ -66,7 +66,7 @@ bios_newest_version:
     "ProLiant SL390s G7": "05/21/2018"
     "ProLiant SL230s Gen8": "05/24/2019"
     "PowerEdge C6525": "2.6.7"
-    "PowerEdge C6420": "2.13.3"
+    "PowerEdge C6420": "2.15.1"
     "PowerEdge C4140": "2.13.3"
     "PowerEdge R740xd": "2.14.2"
     "PowerEdge R740": "2.14.2"
