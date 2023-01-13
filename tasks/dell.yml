@@ -84,15 +84,16 @@
 
 - name: Check current PERC version
   tags: perc,debug, fw
-  script: files/Dell/check_perc_fw.sh
+  shell:
+    cmd: /opt/MegaRAID/perccli/perccli64 /call show |awk '/FW Package Build/ {print $5}'
   register: perc_installed_version
   when: perc_version is defined
   changed_when: False
 
 - debug:
     msg:
-      - "PERC Firmware-version: {{ perc_installed_version.stdout | regex_replace ('^(.*)\\r\\n$', '\\1') }}"
-      - "PERC newest Firmware-version: {{ perc_newest_version [perc_version] }}"
+      - "PERC Firmware-version: {{ perc_installed_version.stdout_lines[0] }} (1st line)"
+      - "PERC newest Firmware-version: {{ perc_newest_version[perc_version] }}"
   when: perc_version is defined
   tags: perc,debug
 
@@ -102,7 +103,7 @@
   register: perc_update_needed
   when: 
     - perc_version is defined
-    - perc_installed_version.stdout is version ( perc_newest_version, '<' )
+    - perc_installed_version.stdout_lines[0] is version (perc_newest_version[perc_version], '<')
   notify: Remove temporary perc update file
 
 - name: Install PERC FW update
